@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+
+<body>
+  <!-- шапка -->
+  <header>
+    <div id="logo" onclick="slowScroll('#entry')">
+      <span>BestNails</span>
+    </div>
+    <div id="about">
+      <a href="#" onclick="slowScroll('#entry')" class="floating-button">Записатися</a>
+      <a href="#" onclick="slowScroll('#main')" class="floating-button">Послуги</a>
+      <a href="#" onclick="slowScroll('#gallery')" class="floating-button">Галерея</a>
+      <script>
+        document.getElementById('btn').onclick = function() {
+    alert("Ви успішно записались!");
+        }
+      </script> 
+    </div>
+  </header>
+
+  <!-- перший блок, запис -->
+  <div id="entry">
+    <center>
+      <h5>Записатися онлайн</h5>
+    </center>
+    <form id="form_input" method="post" action="{% url 'create' %}">
+      <label for="name">Ім'я<span>*</span></label><br>
+      <input type="text" placeholder="Введіть ваше ім'я" name="name" id="name"><br>
+      <label for="email">Ваша пошта<span>*</span></label><br>
+      <input type="email" placeholder="Введіть ваш email" name="email" id="email"><br>
+      <label for="select">Послуга<span>*</span></label><br>
+      <select name="select-service" class="select">
+        <option disabled>Виберіть послугу</option>
+        <option>Манікюр</option>
+        <option>Педікюр</option>
+        <option>Нарощуваня нігтів</option>
+      </select><br>
+      <label for="select">Час<span>*</span></label><br>
+      <select name="select-time" class="select">
+        <option disabled>Виберіть час</option>
+        <option>10:00</option>
+        <option>12:00</option>
+        <option>14:00</option>
+        <option>16:00</option>
+        <option>18:00</option>
+      </select><br>
+      <label for="message">Повідомлення</label><br>
+      <textarea placeholder="Введіть додатковий коментар" name="message" id="message"></textarea><br>
+      <button class="btn" id="btn">Записатися</button>
+      <script>
+        document.getElementById('btn').onclick = function() {
+    alert("Ви успішно записались!");
+        }
+      </script> 
+    </form>
+  </div>
+
+  <!-- другий блок, послуги -->
+  <div id="main">
+    <h1>Наші послуги!</h1>
+    <div class="intro">
+      <h2>Манікюр</h2>
+      <div class="text">
+        <span>Будь-яка поважаюча жінка знає, що манікюр - це дуже важлива частина Вашої зовнішності, яка вимагає догляду. 
+          Багато представниць слабкої статі почуваються набагато впевненіше, якщо у них нафарбовані та доглянуті нігті. 
+          Для жінки її руки-це її друга особа, за ними чоловік зможе дізнатися про жінку багато речей. 
+          Красиві руки надають впевненості в собі. Нігті, їх блиск і міцність - ознака відмінного здоров'я.
+          <br>На сьогоднішній момент існує безліч косметичних препаратів, що дозволяють зробити нігті ідеальними. 
+          Різноманітність відтінків лаку може закрутити голову, але слід пам'ятати, що вони всі підходять саме Вам. 
+          У нашому салоні майстри з манікюру допоможуть Вас підтримувати ідеальний вид рук та нігтів. 
+          Якісний манікюр допоможе надати Вашим рукам шарму та чарівності.
+          <br><br>Ми пропонуємо Вам наступні види послуг:
+          <br><br>Класичний обрізний манікюр
+          <br><br>Найпоширеніший вид манікюру. 
+          Дозволяє підтримувати ваші ручки в ідеальному стані. 
+          Процедура не займає багато часу.
+          <br><br>Європейський необрізний манікюр
+          <br><br>У цій процедурі для видалення кутикули використовують спеціальний апарат, що і є головною перевагою та рисою європейського манікюру. 
+          До його складу входять молочні та фруктові кислоти. 
+          Спосіб не викликає хворобливих відчуттів і відмінно підходить володаркам близько розташованих кровоносних судин та тонкої шкіри.
+        </span>
+      </div>
+      <div class="photo">
+        <div class="photoborder">
+          <img class="img"
+            src="https://modnail.ru/wp-content/uploads/2019/10/25e072753ba8f2933b6044abd7243366-400x400.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="intro">
+      <h2>Педікюр</h2>
+      <div class="text">
+        <span>Не слід забувати про догляд за пальчиками Ваших ніг. 
+          У літній період особливо важливим є догляд за ногами, тому що Ваші стопи в чарівних босоніжках зможуть захопити будь-якого чоловіка.<br><br>
+          Наші майстри радо запропонують Вам різні види педикюру:<br><br>
+          Класичний обрізний педикюр<br><br>
+          Найпоширеніший вид педирюру. Дозволяє підтримувати ваші нігті в ідеальному стані. Процедура не займає багато часу.<br><br>
+          Європейський необрізний педикюр<br><br>
+          У даній процедурі для видалення кутикули використовують спеціальний апарат, що є відмінністю європейського манікюру. 
+          До його складу входять молочні та фруктові кислоти. 
+          Спосіб не викликає хворобливих відчуттів і відмінно підходить володаркам близько розташованих кровоносних судин та тонкої шкіри.</span>
+      </div>
+      <div class="photo">
+        <div class="photoborder">
+          <img class="img"
+            src="https://modnail.ru/wp-content/uploads/2019/10/25e072753ba8f2933b6044abd7243366-400x400.jpg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="intro">
+      <h2>Нарощуваня нігтів</h2>
+      <div class="text">
+        <span>Технології нарощування нігтів<br><br>
+          У нашому салоні ви зможете наростити нігті за допомогою акрилових і гелевих технологій.<br><br>
+          У нашому салоні використовується акрилова та гелева технологія моделювання нігтів. 
+          Гелеві технології мають низку незаперечних переваг перед нарощуванням за допомогою акрилу. 
+          Для нарощування за допомогою гелю знімається найменший верхній шар нігтьової пластини, які становить 10-20%, 
+          тоді як при застосуванні акрилової технології цей відсоток зростає до 30-40%, що само собою не дуже добре позначається на здоров'ї Ваших нігтів. 
+          Крім цього аспекту не потрібно забувати і про високу токсичність акрилових мас, що використовуються в ході моделювання нігтів.</span>
+      </div>
+      <div class="photo">
+        <div class="photoborder">
+          <img class="img"
+            src="https://modnail.ru/wp-content/uploads/2019/10/25e072753ba8f2933b6044abd7243366-400x400.jpg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- блок галереї -->
+
+  <div id="gallery">
+    <h2>Галерея</h2>
+    <center>
+      <div class="slider middle">
+        <div class="slides">
+
+          <input type="radio" name="r" id="r1" checked>
+          <input type="radio" name="r" id="r2" checked>
+          <input type="radio" name="r" id="r3" checked>
+          <input type="radio" name="r" id="r4" checked>
+
+          <div class="slide s1"><img src="static/img/1.jpg" alt=""></div>
+          <div class="slide"><img src="static/img/2.jpg" alt=""></div>
+          <div class="slide"><img src="static/img/3.jpg" alt=""></div>
+          <div class="slide"><img src="static/img/4.jpg" alt=""></div>
+
+        </div>
+
+        <div class="navigation">
+          <label for="r1" class="bar"></label>
+          <label for="r2" class="bar"></label>
+          <label for="r3" class="bar"></label>
+          <label for="r4" class="bar"></label>
+        </div>
+      </div>
+    </center>
+  </div>
+
+  <footer>
+    <center><div class="footer">
+      <p class="text">© 2022 Copyright: Мацегора Олександр Миколайович<br><a href="mailto:sasha.matsegora2@gmail.com">sasha.matsegora2@gmail.com</a> || <a href="tel:+380 95 011 86 80">+380 95 011 86 80</a>
+      </p>
+      <a class="insta" href="https://www.instagram.com/" role="button"><img src="static/img/insta.png"></a>
+      <a class="insta" href="https://www.facebook.com/" role="button"><img src="static/img/faceboock.png"></a>
+    </div></center>
+  </footer>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    function slowScroll(id) {
+      $('html, body').animate({
+        scrollTop: $(id).offset().top
+      }, 1000);
+    }
+
+    $(document).on("scroll", function () {
+      if ($(window).scrollTop() === 0)
+        $("header").removeClass("fixed");
+      else
+        $("header").attr("class", "fixed");
+    });
+  </script>
+</body>
+
+</html>
