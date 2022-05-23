@@ -446,7 +446,6 @@ footer {
   width: 100%;
   height: 100px;
   background-color: #fafafa;
-  background-image: url(https://i.imgur.com/aM0Nuzr.jpg);
 }
 
 footer p {
@@ -465,4 +464,94 @@ footer img {
   padding: 20px;
   height: 40px;
   width: 40px;
+}
+
+#reviews {
+  padding-top: 100px;
+}
+
+#reviews h1 {
+  padding-left: 20px;
+  padding-top: 10px;
+  font-size: 2em;
+}
+
+#msg span {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 1em;
+  width: 95%;
+  display: block;
+}
+
+#msg {
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-bottom: 20px;
+  border: 2px solid #484848;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+#reviews h5 {
+  padding-bottom: 20px;
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Roboto Slab', serif;
+  font-weight: lighter;
+}
+
+
+#createreviews {
+  width: 100%;
+}
+
+#form_review label {
+  font-size: 1.4em;
+  font-family: 'Roboto Slab', serif;
+}
+
+#form_reviewt label>span {
+  color: #e87e7e;
+}
+
+#form_review input,
+#form_review textarea {
+  margin-bottom: 10px;
+  width: 50%;
+  padding: 10px 2%;
+  border-radius: 20px;
+  border: 2px solid silver;
+  font-size: 0.9em;
+  color: #4a4a4a;
+}
+
+.btn_reviews {
+  border: 1px solid #080605;
+  text-decoration: none;
+  line-height: 20px;
+  width: 20%;
+  border-radius: 45px;
+  margin: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+  transition: .3s;
+  padding: 10px 2%
+}
+
+.btn_reviews:hover {
+  background: #ec6550;
+  box-shadow: 0 15px 20px rgba(193, 84, 67, 1);
+  ;
+  ;
+  color: white;
+  transform: translateY(-7px);
 }

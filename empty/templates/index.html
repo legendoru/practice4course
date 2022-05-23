@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>BestNails</title>
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 
@@ -19,6 +19,7 @@
       <a href="#" onclick="slowScroll('#entry')" class="floating-button">Записатися</a>
       <a href="#" onclick="slowScroll('#main')" class="floating-button">Послуги</a>
       <a href="#" onclick="slowScroll('#gallery')" class="floating-button">Галерея</a>
+      <a href="reviews" class="floating-button">Відгуки</a>
       <script>
         document.getElementById('btn').onclick = function() {
     alert("Ви успішно записались!");
@@ -34,14 +35,14 @@
     </center>
     <form id="form_input" method="post" action="{% url 'create' %}">
       <label for="name">Ім'я<span>*</span></label><br>
-      <input type="text" placeholder="Введіть ваше ім'я" name="name" id="name"><br>
+      <input type="text" placeholder="Введіть ваше ім'я" name="name" id="name" maxlength="12"><br>
       <label for="email">Ваша пошта<span>*</span></label><br>
       <input type="email" placeholder="Введіть ваш email" name="email" id="email"><br>
       <label for="select">Послуга<span>*</span></label><br>
       <select name="select-service" class="select">
         <option disabled>Виберіть послугу</option>
         <option>Манікюр</option>
-        <option>Педікюр</option>
+        <option>Педикюр</option>
         <option>Нарощуваня нігтів</option>
       </select><br>
       <label for="select">Час<span>*</span></label><br>
@@ -54,7 +55,7 @@
         <option>18:00</option>
       </select><br>
       <label for="message">Повідомлення</label><br>
-      <textarea placeholder="Введіть додатковий коментар" name="message" id="message"></textarea><br>
+      <textarea placeholder="Введіть додатковий коментар" name="message" id="message" maxlength="200"></textarea><br>
       <button class="btn" id="btn">Записатися</button>
       <script>
         document.getElementById('btn').onclick = function() {
@@ -97,13 +98,13 @@
       </div>
     </div>
     <div class="intro">
-      <h2>Педікюр</h2>
+      <h2>Педикюр</h2>
       <div class="text">
         <span>Не слід забувати про догляд за пальчиками Ваших ніг. 
           У літній період особливо важливим є догляд за ногами, тому що Ваші стопи в чарівних босоніжках зможуть захопити будь-якого чоловіка.<br><br>
           Наші майстри радо запропонують Вам різні види педикюру:<br><br>
           Класичний обрізний педикюр<br><br>
-          Найпоширеніший вид педирюру. Дозволяє підтримувати ваші нігті в ідеальному стані. Процедура не займає багато часу.<br><br>
+          Найпоширеніший вид педикюру. Дозволяє підтримувати ваші нігті в ідеальному стані. Процедура не займає багато часу.<br><br>
           Європейський необрізний педикюр<br><br>
           У даній процедурі для видалення кутикули використовують спеціальний апарат, що є відмінністю європейського манікюру. 
           До його складу входять молочні та фруктові кислоти. 

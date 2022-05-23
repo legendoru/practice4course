@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Відгуки</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+    <header class="fixed">
+        <div id="logo" onclick="slowScroll('#logo')">
+          <span>BestNails</span>
+        </div>
+        <div id="about">
+          <a href="index" class="floating-button">Записатися</a>
+          <a href="index" class="floating-button">Послуги</a>
+          <a href="index" class="floating-button">Галерея</a>
+        </div>
+      </header>
+    <div id="reviews">
+      <h5>Відгуки</h5>
+    {% for review in reviews%}
+      <div id="msg">
+      <h1>{{review.name_reviews}}</h1> 
+      <span>{{review.msg_reviews}}</span>
+      </div> 
+    {% endfor %}
+
+
+    <div id="createreviews">
+        <center><form id="form_review" method="post" action="{% url 'createreviews' %}">
+          <label for="name_reviews">Ім'я</label><br>
+          <input type="text" placeholder="Введіть ваше ім'я" name="name_reviews" id="name_reviews" maxlength="12"><br>
+          <label for="email_reviews">Ваша пошта</label><br>
+          <input type="email" placeholder="Введіть ваш email" name="email_reviews" id="email_reviews"><br>
+          <label for="message_reviews">Відгук</label><br>
+          <textarea placeholder="Введіть ваш відгук" name="message_reviews" id="message_reviews" maxlength="500"></textarea><br>
+          <button class="btn_reviews" id="btn_reviews">Залишити відгук</button>
+        </form></center>
+      </div>
+    </div>
+      <footer>
+        <center><div class="footer">
+          <p class="text">© 2022 Copyright: Мацегора Олександр Миколайович<br><a href="mailto:sasha.matsegora2@gmail.com">sasha.matsegora2@gmail.com</a> || <a href="tel:+380 95 011 86 80">+380 95 011 86 80</a>
+          </p>
+          <a class="insta" href="https://www.instagram.com/" role="button"><img src="static/img/insta.png"></a>
+          <a class="insta" href="https://www.facebook.com/" role="button"><img src="static/img/faceboock.png"></a>
+        </div></center>
+      </footer>
+
+
+<script>
+      function slowScroll(id) {
+        $('html, body').animate({
+          scrollTop: $(id).offset().top
+        }, 1000);
+      }
+</script>
+</body>
+</html>

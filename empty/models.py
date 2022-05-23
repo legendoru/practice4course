@@ -6,3 +6,8 @@ class Emptys(models.Model):
     service = models.TextField()
     time = models.TextField()
     msg = models.TextField()
+
+class Review(models.Model):
+    name_reviews = models.TextField()
+    email_reviews =models.TextField()
+    msg_reviews = models.TextField()
